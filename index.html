@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>To My Roshni 💛</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #1e2a78, #0d0f1f);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin-top: 40px;
+      text-align: center;
+      color: #ffdf91;
+      text-shadow: 0 0 15px #ffdf91;
+    }
+
+    .boat-scene {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background: url('boat-scene.jpg') center/cover no-repeat;
+      margin-top: 20px;
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.7);
+    }
+
+    p, .lyrics {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .lantern {
+      position: absolute;
+      width: 20px;
+      height: 30px;
+      background: radial-gradient(circle, #ffdf91, #ffb347);
+      border-radius: 50%;
+      animation: floatLanterns 12s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatLanterns {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0);
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110%;
+        transform: translateX(-30px);
+        opacity: 0;
+      }
+    }
+
+    .button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 28px;
+      background: #ffe08a;
+      color: #5b3900;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #ffefba;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I See the Light ✨</h1>
+
+  <div class="boat-scene" id="scene"></div>
+
+  <p class="lyrics">
+    "And at last I see the light,<br>
+    And it's like the sky is new…" 💛
+  </p>
+
+  <p>
+    Dear Chhuttkuuu Patnii jiii,<br>
+    Like Rapunzel lighting lanterns in the sky, you illuminate my life.  
+    On our boat, under this shimmering glow, I feel the magic of everything we can be together.
+  </p>
+
+  <button class="button" onclick="reveal()">Tap for my heart 💫</button>
+
+  <div id="msg" style="display:none; text-align:center; max-width:600px; margin: auto; padding: 20px;">
+    <p>
+      Here begins our own fairy tale —<br>
+      Where every glance, every whisper,<br>
+      Is a promise under the lantern light. 💖<br>
+      I loveeee youuuu soooo muchhhh my babyyy Roshniii😘😘😘❤❤❤
+    </p>
+  </div>
+
+  <button class="button" onclick="playSong()">Play ‘I See the Light’ 🎶</button>
+
+  <audio id="bgmusic">
+    <source src="I See The Light.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSong() {
+      const audio = document.getElementById("bgmusic");
+      audio.play();
+    }
+
+    function reveal() {
+      document.getElementById("msg").style.display = "block";
+      playSong();
+    }
+
+    // Lantern generator
+    for (let i = 0; i < 40; i++) {
+      const l = document.createElement('div');
+      l.className = 'lantern';
+      l.style.left = Math.random() * 100 + 'vw';
+      l.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(l);
+    }
+  </script>
+
+</body>
+</html>
